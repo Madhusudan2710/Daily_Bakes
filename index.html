@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bakery Document</title>
+    <link href="./CSS/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./CSS/bootstrap.css" />
+  </head>
+  <body>
+    <hr class="m-0" />
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="./IMAGES/logo-Photoroom (2).png"
+            class="rounded-3"
+            alt="Logo"
+            style="max-width: 60px"
+          />
+        </a>
+        <!-- Toggler Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#best-snacks">Best Snacks</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Our Services
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#">Ice Creams</a></li>
+                <li><a class="dropdown-item" href="#">Sweets</a></li>
+                <li><a class="dropdown-item" href="#">Cakes</a></li>
+                <li><a class="dropdown-item" href="#">Cool Drinks</a></li>
+                <li><a class="dropdown-item" href="#">Chips & Dip</a></li>
+                <li><a class="dropdown-item" href="#">Others</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact-info">Contact Info</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button
+              class="btn btn-outline-warning me-2"
+              data-bs-target="#loginModal"
+              data-bs-toggle="modal"
+              type="button"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-warning"
+              data-bs-target="#signupModal"
+              data-bs-toggle="modal"
+              type="button"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Creating Login page -->
+    <div
+      aria-hidden="true"
+      aria-labelledby="loginModalLabel"
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button
+              aria-label="Close"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              type="button"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3 d-flex">
+              <select class="form-select w-auto" id="countryCode">
+                <option value="+91">+91</option>
+                <option value="+1">+1</option>
+                <option value="+44">+44</option>
+                <option value="+61">+61</option>
+                <option value="+33">+33</option>
+              </select>
+              <input
+                class="form-control"
+                id="phone"
+                placeholder="Enter your phone number"
+                type="text"
+              />
+            </div>
+            <button class="btn btn-danger w-100" style="border: solid 1px #ccc">
+              Send One Time Password
+            </button>
+            <div class="text-center my-3">OR</div>
+            <button
+              class="btn btn-light w-100 mb-2"
+              style="border: solid 1px #ccc"
+            >
+              <img
+                alt="Email Icon"
+                src="./IMAGES/gmail.png"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              Continue with Email
+            </button>
+            <button class="btn btn-light w-100" style="border: solid 1px #ccc">
+              <img
+                alt="Google Icon"
+                src="./IMAGES/google.png"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              Sign in with Google
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Creating Sign up page -->
+    <div
+      aria-hidden="true"
+      aria-labelledby="signupModalLabel"
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+            <button
+              aria-label="Close"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              type="button"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" novalidate="">
+              <div class="mb-3">
+                <input
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Full Name"
+                  required=""
+                  type="text"
+                />
+                <div class="invalid-feedback">Full name is required.</div>
+              </div>
+              <div class="mb-3">
+                <input
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  required=""
+                  type="email"
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
+              </div>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  id="terms"
+                  required=""
+                  type="checkbox"
+                />
+                <label class="form-check-label" for="terms"
+                  >I agree to Daily Bake's
+                  <a href="#"> Terms of Service </a>
+                  ,
+                  <a href="#"> Privacy Policy </a>
+                  , and
+                  <a href="#"> Content Policies </a>
+                  .
+                </label>
+                <div class="invalid-feedback">
+                  You must agree to the terms to sign up.
+                </div>
+              </div>
+              <button
+                class="btn btn-warning w-100"
+                style="border: solid 1px #ccc"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </form>
+            <div class="text-center my-3">OR</div>
+            <button
+              class="btn btn-danger w-100 mb-2"
+              style="border: solid 1px #ccc"
+            >
+              <img
+                alt="Google Icon"
+                src="./IMAGES/google.png"
+                style="width: 20px; height: 20px; margin-right: 10px"
+              />
+              Sign up with Google
+            </button>
+            <div class="text-center mt-3">
+              Already have an account?
+              <a data-bs-target="#loginModal" data-bs-toggle="modal" href="#">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="background-container">
+      <div class="content-container">
+        <p class="h1">
+          Welcome to Daily Bakes – A Haven for Handcrafted Delights!
+        </p>
+        <h4>
+          Indulge in the taste of freshly baked snacks and treats made with love
+          and care.
+        </h4>
+        <!-- Location -->
+        <div class="container mt-5">
+          <!-- Row containing Location Box and Search Bar -->
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <!-- Location Box -->
+              <div class="position-relative">
+                <input
+                  type="text"
+                  id="locationBox"
+                  class="form-control border-0 custom-location-box"
+                  placeholder="Click to detect location"
+                  readonly
+                />
+                <div
+                  id="popup"
+                  class="popup position-absolute bg-white border p-3 shadow d-none"
+                >
+                  <p id="popupText" class="mb-2">
+                    Do you want to detect your current location?
+                  </p>
+                  <button id="detectButton" class="btn btn-primary btn-sm">
+                    Detect Location
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-auto">
+              <div class="input-group">
+                <span
+                  class="input-group-text custom-search-icon"
+                  id="search-icon"
+                >
+                  <img src="./IMAGES/magnifying-glass.png" alt="" />
+                </span>
+                <input
+                  type="text"
+                  class="form-control custom-search-bar py-2"
+                  placeholder="Search for your favorite snack or pastry..."
+                  aria-label="Search"
+                  aria-describedby="search-icon"
+                  id="searchBar"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 my-5 ps-md-5 d-flex justify-content-center align-items-center"
+        >
+          <div>
+            <p class="h2 text-muted">The Art of Handmade Pastries</p>
+            <hr class="headline" />
+            <p>
+              Savor the artistry of handmade pastries, crafted with passion and
+              precision. From buttery croissants to flaky tarts, every bite is a
+              celebration of tradition and innovation.
+            </p>
+            <div class="d-flex gap-3">
+              <button class="border-warning bg-white px-3">
+                <img alt="Left Arrow" src="./IMAGES/left-arrow.png" />
+              </button>
+              <button class="border-warning bg-white px-3">
+                <img alt="Right Arrow" src="./IMAGES/right-arrow.png" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4 my-5 d-flex justify-content-center align-items-center"
+        >
+          <div class="card rounded-0 border-0">
+            <div class="card-body text-center p-0">
+              <img
+                alt="Peanut Cookies"
+                class="card-img rounded-circle img-container1 t3-imgs mb-3"
+                src="./IMAGES/cake2.png"
+              />
+            </div>
+            <div class="card-footer text-center border-0">
+              <p class="h5 text-muted">Peanut Cookies</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4 my-5 d-flex justify-content-center align-items-center"
+        >
+          <div class="card rounded-0 text-center border-0">
+            <div class="card-body p-0">
+              <img
+                alt="Dream Cookies"
+                class="card-img rounded-circle img-container1 mb-3 t3-imgs"
+                src="./IMAGES/cake3.png"
+              />
+            </div>
+            <div class="card-footer text-center border-0">
+              <p class="h5 text-muted">Dream Cookies</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4 my-5 d-flex justify-content-center align-items-center"
+        >
+          <div class="card rounded-0 text-center border-0">
+            <div class="card-body p-0">
+              <img
+                alt="Pie Pepperoni"
+                class="card-img rounded-circle img-container1 mb-3 t3-imgs"
+                src="./IMAGES/cake5.jpg"
+              />
+            </div>
+            <div class="card-footer text-center border-0">
+              <p class="h5 text-muted">Pie Pepperoni</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best Snacks Elements Section -->
+    <div style="background-color: #eeeeee">
+      <div class="container">
+        <div class="row" id="best-snacks">
+          <div class="col-12 mt-5">
+            <div class="text-center mt-5">
+              <p class="text-warning">OUR SNACKS</p>
+              <p class="h2 text-muted">Best Snacks Elements</p>
+              <center>
+                <hr
+                  style="
+                    border-width: 5px;
+                    width: 40px;
+                    color: orange;
+                    opacity: 0.7;
+                  "
+                />
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Item 1: Classic Butter Croissant -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/cookies/cookie1.png"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Classic Butter Croissant
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Food provides essential nutrients for overall health and
+                  well-being
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Choco-Chip Muffins -->
+
+          <!-- Item 3: Almond Biscotti -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/Cookies/cookie2.jpg"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Choco-Chip Muffins
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Food provides essential nutrients for overall health and
+                  well-being
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/Cookies/cookie4.jpg"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Almond Biscotti
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Food provides essential nutrients for overall health and
+                  well-being
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Blueberry Tart -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/Cookies/cookies.jpg"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Blueberry Tart
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Food provides essential nutrients for overall health and
+                  well-being
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Item 9: Lemon Drizzle Cake -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/iceCreams/iceCream1.jpg"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Lemon Drizzle Cake
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing..
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 10: Raspberry Macarons -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/iceCreams/iceCream2.jpg"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Raspberry Macarons
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing..
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 11: Pecan Pie Bites -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/iceCreams/iceCream3.png"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Pecan Pie Bites
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing..
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 12: Lemon Drizzle Cake -->
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+          >
+            <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+              <div class="card-body p-0 card-container">
+                <img
+                  alt=""
+                  class="card-img img-container2"
+                  src="./IMAGES/iceCreams/iceCream4.jpg"
+                />
+                <div
+                  class="d-flex justify-content-between align-items-center w-100"
+                  style="position: absolute; top: 10px"
+                >
+                  <span
+                    class="text-warning fs-3 ps-2"
+                    style="font-family: monospace"
+                    >$15</span
+                  >
+                  <div class="p-2 me-2 bg-white rounded-circle">
+                    <img
+                      alt=""
+                      class="heart-icon card-img cursor-pointer hover-zoom"
+                      src="./Images/heart.png"
+                      style="width: 25px; height: 25px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between flex-column border-0"
+              >
+                <p class="h5 text-center" style="font-size: 1.25rem">
+                  Lemon Drizzle Cake
+                </p>
+                <p class="text-center mb-0" style="font-size: 1rem">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing..
+                </p>
+                <button
+                  class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                  onclick="handleCartAction(this)"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="extra-items">
+          <div class="row">
+            <!-- Item 5: Savory Cheese Straws -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/sweets/sweet1.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Savory Cheese Straws
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Food provides essential nutrients for overall health and
+                    well-being
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6: Honey Glazed Donuts -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/sweets/sweet2.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Honey Glazed Donuts
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Food provides essential nutrients for overall health and
+                    well-being
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7: Fruit Danish -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/sweets/sweet3.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Fruit Danish
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Food provides essential nutrients for overall health and
+                    well-being
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 8: Pecan Pie Bites -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/sweets/sweet6.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Pecan Pie Bites
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Food provides essential nutrients for overall health and
+                    well-being
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 13: Raspberry Macarons -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/chips/chips1.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Raspberry Macarons
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 14: Honey Glazed Donuts -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/chips/chips2.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Honey Glazed Donuts
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 15: Fruit Danish -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/chips/chips3.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Fruit Danish
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 16: Savory Cheese Straws -->
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/chips/chips4.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Savory Cheese Straws
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/CoolDrinks/juice1.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Lemon Drizzle Cake
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/CoolDrinks/juice6.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Lemon Drizzle Cake
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/CoolDrinks/juice7.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Lemon Drizzle Cake
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center"
+            >
+              <div class="card rounded-3 mt-5 cookie_container my-5 mx-3">
+                <div class="card-body p-0 card-container">
+                  <img
+                    alt=""
+                    class="card-img img-container2"
+                    src="./IMAGES/CoolDrinks/juice12.avif"
+                  />
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                    style="position: absolute; top: 10px"
+                  >
+                    <span
+                      class="text-warning fs-3 ps-2"
+                      style="font-family: monospace"
+                      >$15</span
+                    >
+                    <div class="p-2 me-2 bg-white rounded-circle">
+                      <img
+                        alt=""
+                        class="heart-icon card-img cursor-pointer hover-zoom"
+                        src="./Images/heart.png"
+                        style="width: 25px; height: 25px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between flex-column border-0"
+                >
+                  <p class="h5 text-center" style="font-size: 1.25rem">
+                    Lemon Drizzle Cake
+                  </p>
+                  <p class="text-center mb-0" style="font-size: 1rem">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing..
+                  </p>
+                  <button
+                    class="cart-button px-5 py-2 border-0 text-white fw-bolder mb-3"
+                    onclick="handleCartAction(this)"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5"></div>
+        <div class="row pb-5">
+          <div class="col-12 text-center mb-5">
+            <button
+              id="show-more-btn"
+              class="px-5 py-2 fw-bolder text-center"
+              onclick="toggleExtraItems()"
+              style="color: #ffffff; background-color: orange; border: none"
+            >
+              View More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container">
+      <div class="row" id="services">
+        <div class="col-12 mt-5">
+          <div class="text-center mt-5">
+            <p class="text-warning">WHY US</p>
+            <p class="h1 text-muted">Our Services</p>
+            <center>
+              <hr
+                style="
+                  border-width: 5px;
+                  width: 40px;
+                  color: orange;
+                  opacity: 0.7;
+                "
+              />
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="card border-0 mt-5">
+            <div class="card-body">
+              <img alt="Ice Cream" src="./IMAGES/ice-cream-cup.png" />
+              <hr
+                style="
+                  border-width: 2px;
+                  width: 75%;
+                  color: orange;
+                  opacity: unset;
+                "
+              />
+            </div>
+            <div class="card-footer border-0 bg-white">
+              <p class="h3 text-muted">Ice Creams</p>
+              <p class="text-muted">
+                Creamy, flavorful ice creams in multiple flavors for a cool
+                treat.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="card border-0 mt-5">
+            <div class="card-body">
+              <img alt="Sweets" src="./IMAGES/truffle.png" />
+              <hr
+                style="
+                  border-width: 2px;
+                  width: 75%;
+                  color: orange;
+                  opacity: unset;
+                "
+              />
+            </div>
+            <div class="card-footer border-0 bg-white">
+              <p class="h3 text-muted">Sweets</p>
+              <p class="text-muted">
+                A variety of desserts to satisfy your sweet tooth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="card border-0 mt-5">
+            <div class="card-body">
+              <img alt="Cakes" src="./IMAGES/cake.png" />
+              <hr
+                style="
+                  border-width: 2px;
+                  width: 75%;
+                  color: orange;
+                  opacity: unset;
+                "
+              />
+            </div>
+            <div class="card-footer border-0 bg-white">
+              <p class="h3 text-muted">Cakes</p>
+              <p class="text-muted">
+                Custom-made cakes for every occasion, baked to perfection.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="card border-0 mt-5">
+            <div class="card-body">
+              <img alt="Cool Drinks" src="./IMAGES/drink.png" />
+              <hr
+                style="
+                  border-width: 2px;
+                  width: 75%;
+                  color: orange;
+                  opacity: unset;
+                "
+              />
+            </div>
+            <div class="card-footer border-0 bg-white">
+              <p class="h3 text-muted">Cool Drinks</p>
+              <p class="text-muted">
+                Refreshing beverages to complement your snacks, crafted with
+                fresh ingredients.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="card border-0 mt-5">
+            <div class="card-body">
+              <img alt="Chips & Dip" src="./IMAGES/potato-chips.png" />
+              <!-- Replace with your actual image for Chips & Dip -->
+              <hr
+                style="
+                  border-width: 2px;
+                  width: 75%;
+                  color: orange;
+                  opacity: unset;
+                "
+              />
+            </div>
+            <div class="card-footer border-0 bg-white">
+              <p class="h3 text-muted">Chips & Dip</p>
+              <p class="text-muted">
+                Crispy chips served with a flavorful dip, perfect for sharing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <div class="card border-0 mt-5">
+            <div class="card-body">
+              <img alt="Others" src="./IMAGES/basket.png" />
+              <hr
+                style="
+                  border-width: 2px;
+                  width: 75%;
+                  color: orange;
+                  opacity: unset;
+                "
+              />
+            </div>
+            <div class="card-footer border-0 bg-white">
+              <p class="h3 text-muted">Others</p>
+              <p class="text-muted">
+                Explore more delightful treats and surprises we offer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row py-5">
+        <div class="col-12 text-center my-5">
+          <button
+            class="px-5 py-2 fw-bolder text-center"
+            style="color: #ffffff; background-color: orange; border: none"
+          >
+            Explore Snacks
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-5" style="background-color: #eeeeee">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 my-5">
+            <div
+              class="d-flex justify-content-center align-items-center flex-column"
+            >
+              <span>
+                <img alt="" src="./IMAGES/ice-cream-cup.png" />
+              </span>
+              <label class="h1" for="">513</label>
+              <p>Professional Chefs</p>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 my-5">
+            <div
+              class="d-flex justify-content-center align-items-center flex-column"
+            >
+              <span>
+                <img alt="" src="./IMAGES/potato-chips.png" />
+              </span>
+              <label class="h1" for="">325</label>
+              <p>Branches</p>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 my-5">
+            <div
+              class="d-flex justify-content-center align-items-center flex-column"
+            >
+              <span>
+                <img alt="" src="./IMAGES/truffle.png" />
+              </span>
+              <label class="h1" for="">1025</label>
+              <p>Happy Customers</p>
+            </div>
+          </div>
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 my-5">
+            <div
+              class="d-flex justify-content-center align-items-center flex-column"
+            >
+              <span>
+                <img alt="" src="./IMAGES/basket.png" />
+              </span>
+              <label class="h1" for="">275</label>
+              <p>Year Of Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Best Recipe Section -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <center class="mt-5">
+            <p class="text-warning">OUR CAKES</p>
+            <p class="h1 text-muted">Our Signature Recipe</p>
+            <hr
+              style="
+                border-width: 5px;
+                width: 40px;
+                color: orange;
+                opacity: 0.7;
+              "
+            />
+          </center>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+      <div class="carousel-box">
+        <button class="nav-button prev-button">
+          <img alt="" src="./IMAGES/left-arrow.png" />
+        </button>
+        <div class="carousel-display">
+          <div class="carousel-track my-5">
+            <!-- Strawberry Delight Cheesecake -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img
+                    alt="Strawberry Delight Cheesecake"
+                    src="./IMAGES/strawberry cake.png"
+                  />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/5star.jpg"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $18.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Strawberry Delight Cheesecake</p>
+                <p class="text-center">
+                  A smooth, creamy cheesecake topped with fresh strawberries and
+                  a hint of vanilla.
+                </p>
+              </div>
+            </div>
+
+            <!-- Cherry Ice Cream -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img
+                    alt="Cherry Ice Cream"
+                    src="./IMAGES/ice-cream-Photoroom.png"
+                  />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/5star.jpg"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $15.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Cherry Ice Cream</p>
+                <p class="text-center">
+                  A delicious ice cream made with real cherries, creamy and
+                  sweet with a hint of tartness.
+                </p>
+              </div>
+            </div>
+
+            <!-- Macaron -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img alt="Macaron" src="./IMAGES/bun cake.jpg" />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/4.5star.png"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $13.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Macaron</p>
+                <p class="text-center">
+                  Light and crispy French macarons with a smooth filling in a
+                  variety of flavors.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chocolate Ombre Cake -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img
+                    alt="Chocolate Ombre Cake"
+                    src="./IMAGES/choco cake.png"
+                  />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/4.5star.png"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $14.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Chocolate Ombre Cake</p>
+                <p class="text-center">
+                  A decadent chocolate cake with layers of rich chocolate and a
+                  beautiful ombre effect.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mawa Barfi -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img alt="Mawa Barfi" src="./IMAGES/sweet1-Photoroom.png" />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/4star.png"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $12.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Mawa Barfi</p>
+                <p class="text-center">
+                  A traditional Indian sweet made from milk solids, sugar, and
+                  cardamom.
+                </p>
+              </div>
+            </div>
+
+            <!-- Vanilla Strawberry -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img
+                    alt="Vanilla Strawberry"
+                    src="./IMAGES/chocolate-Photoroom.png"
+                  />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/4.5star.png"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $16.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Vanilla Strawberry</p>
+                <p class="text-center">
+                  A delightful blend of creamy vanilla and fresh strawberry,
+                  perfect for all dessert lovers.
+                </p>
+              </div>
+            </div>
+
+            <!-- Rava Laddu -->
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img alt="Rava Laddu" src="./IMAGES/laddo-Photoroom.png" />
+                  <img
+                    alt=""
+                    class="h-auto"
+                    src="./IMAGES/5star.jpg"
+                    style="width: 115px"
+                  />
+                  <span
+                    class="text-warning fs-5"
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 0px;
+                      right: 0px;
+                    "
+                  >
+                    $20.00
+                  </span>
+                </div>
+                <p class="h5 text-center">Rava Laddu</p>
+                <p class="text-center">
+                  A sweet Indian dessert made from semolina, ghee, and cardamom,
+                  shaped into delightful laddus.
+                </p>
+              </div>
+            </div>
+
+            <div class="carousel-element">
+              <div class="item-card">
+                <div style="position: relative">
+                  <img
+                    alt="Teddy Bear"
+                    class="max-width:360px"
+                    src="./IMAGES/teddy.jpg"
+                  />
+                  <p
+                    class="h2 btn btn-warning m-0"
+                    href=""
+                    style="
+                      font-family: monospace;
+                      position: absolute;
+                      top: 10px;
+                      left: 10px;
+                      opacity: 0.6;
+                    "
+                  >
+                    Order now
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="nav-button next-button">
+          <img alt="" src="./IMAGES/right-arrow.png" />
+        </button>
+      </div>
+    </div>
+
+    <div style="background-color: #eee">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mt-5">
+            <center class="mt-5">
+              <p class="text-warning">BEST TEAM</p>
+              <p class="h1 text-muted">Cookies Makers</p>
+              <hr
+                style="
+                  border-width: 5px;
+                  width: 40px;
+                  color: orange;
+                  opacity: 0.7;
+                "
+              />
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <div class="carousel-box">
+          <button class="nav-button prev-button">
+            <img alt="" src="./IMAGES/left-arrow.png" />
+          </button>
+          <div class="carousel-display">
+            <div class="carousel-track mb-5">
+              <div class="carousel-element">
+                <div
+                  class="item-card"
+                  style="
+                    position: relative;
+                    border: none;
+                    border-radius: 0px;
+                    background-color: transparent;
+                    box-shadow: none;
+                  "
+                >
+                  <img alt="Item 1" src="./IMAGES/78437-Photoroom (1).png" />
+                  <div class="cookLabel">
+                    <p class="h3 text-center text-white">Caleb Hayes</p>
+                    <p class="text-center text-white">Maker</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-element">
+                <div
+                  class="item-card"
+                  style="
+                    position: relative;
+                    border: none;
+                    border-radius: 0px;
+                    background-color: transparent;
+                    box-shadow: none;
+                  "
+                >
+                  <img
+                    alt="Item 1"
+                    src="./IMAGES/chef-making-time-out-gesture-white-background-Photoroom (1).png"
+                  />
+                  <div class="cookLabel">
+                    <p class="h3 text-center text-white">Zachary Cole</p>
+                    <p class="text-center text-white">Maker</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-element">
+                <div
+                  class="item-card"
+                  style="
+                    position: relative;
+                    border: none;
+                    border-radius: 0px;
+                    background-color: transparent;
+                    box-shadow: none;
+                  "
+                >
+                  <img
+                    alt="Item 1"
+                    src="./IMAGES/2150771051-Photoroom (1).png"
+                  />
+                  <div class="cookLabel">
+                    <p class="h3 text-center text-white">Lucas Greene</p>
+                    <p class="text-center text-white">Maker</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-element">
+                <div
+                  class="item-card"
+                  style="
+                    position: relative;
+                    border: none;
+                    border-radius: 0px;
+                    background-color: transparent;
+                    box-shadow: none;
+                  "
+                >
+                  <img alt="Item 1" src="./IMAGES/chef4.png" />
+                  <div class="cookLabel">
+                    <p class="h3 text-center text-white">Oliver Shaw</p>
+                    <p class="text-center text-white">Maker</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nav-button next-button">
+            <img alt="" src="./IMAGES/right-arrow.png" />
+          </button>
+        </div>
+      </div>
+      <div class="container py-5">
+        <div class="row">
+          <div
+            class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center"
+          >
+            <button class="btn btn-warning text-white px-5 py-2 fw-bolder">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-5">
+      <p class="text-warning fw-bold text-center">CHECK OUT OUR CLIENT'S</p>
+      <h2 class="fw-semibold text-center">Testimonial Words</h2>
+      <div id="testimonial-container" class="row align-items-center mt-4">
+        <!-- Testimonial 1 -->
+        <div class="testimonial row align-items-center">
+          <!-- Image Section -->
+          <div
+            class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 text-center mb-3 mb-md-0"
+          >
+            <div
+              class="overflow-hidden mx-auto"
+              style="width: 300px; height: 200px"
+            >
+              <img
+                src="./IMAGES/victoriaPorterDirector.jpg"
+                alt="Victoria Porter"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <!-- Content Section -->
+          <div
+            class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 text-center text-md-start"
+          >
+            <p class="fw-bold mt-3 mb-1">
+              Victoria Porter <span class="text-muted">[ Director ]</span>
+            </p>
+            <p class="text-muted small">
+              In collaboration with public partners, iBusiness connects local
+              businesses and job-seeking residents with resources. Our range of
+              programs offers every service from talent recruiting and career
+              development to clinical case man collaboration.
+            </p>
+            <img
+              src="./IMAGES/VictoriaPorterSn.png"
+              alt=""
+              style="max-width: 150px"
+            />
+          </div>
+          <!-- Arrows Section -->
+          <div
+            class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 text-center"
+          >
+            <div
+              class="d-flex flex-row flex-md-column justify-content-center align-items-center gap-3"
+            >
+              <button
+                class="btn btn-outline-warning rounded-circle up-arrow"
+                style="width: 40px; height: 40px"
+              >
+                &#9650;
+              </button>
+              <button
+                class="btn btn-outline-warning rounded-circle down-arrow"
+                style="width: 40px; height: 40px"
+              >
+                &#9660;
+              </button>
+              <button
+                class="btn btn-outline-warning rounded-circle left-arrow"
+                style="width: 40px; height: 40px; display: none"
+              >
+                &#8592;
+              </button>
+              <button
+                class="btn btn-outline-warning rounded-circle right-arrow"
+                style="width: 40px; height: 40px; display: none"
+              >
+                &#8594;
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial row align-items-center d-none">
+          <div
+            class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 text-center mb-3 mb-md-0"
+          >
+            <div
+              class="overflow-hidden mx-auto"
+              style="width: 300px; height: 200px"
+            >
+              <img
+                src="./IMAGES/John Doe [Manager].jpg"
+                alt="John Doe"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div
+            class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 text-center text-md-start"
+          >
+            <p class="fw-bold mt-3 mb-1">
+              John Doe <span class="text-muted">[ Manager ]</span>
+            </p>
+            <p class="text-muted small">
+              John has consistently delivered outstanding results, helping our
+              team achieve excellence in all our projects and collaborations.
+            </p>
+            <img
+              src="./IMAGES/john doe sn.png"
+              alt=""
+              style="max-width: 150px"
+            />
+          </div>
+          <div
+            class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 text-center"
+          >
+            <div
+              class="d-flex flex-row flex-md-column justify-content-center align-items-center gap-3"
+            >
+              <button
+                class="btn btn-outline-warning rounded-circle up-arrow"
+                style="width: 40px; height: 40px"
+              >
+                &#9650;
+              </button>
+              <button
+                class="btn btn-outline-warning rounded-circle down-arrow"
+                style="width: 40px; height: 40px"
+              >
+                &#9660;
+              </button>
+              <button
+                class="btn btn-outline-warning rounded-circle left-arrow"
+                style="width: 40px; height: 40px; display: none"
+              >
+                &#8592;
+              </button>
+              <button
+                class="btn btn-outline-warning rounded-circle right-arrow"
+                style="width: 40px; height: 40px; display: none"
+              >
+                &#8594;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-color: #eee">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mt-5">
+            <center class="mt-5">
+              <p class="text-warning">CHECK OUT BLOG</p>
+              <p class="h1 text-muted">Our Blog: Baking Stories & Tips</p>
+              <hr
+                style="
+                  border-width: 5px;
+                  width: 40px;
+                  color: orange;
+                  opacity: 0.7;
+                "
+              />
+            </center>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+            <div class="row">
+              <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <img
+                  alt="5 Tips for Baking Perfect Cookies"
+                  class="img-fluid"
+                  src="./IMAGES/48106.jpg"
+                  style="max-width: 100%; height: auto"
+                />
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="bg-white p-2">
+                  <p class="m-2 text-warning">NEWS</p>
+                  <p class="h4">5 Tips for Baking Perfect Cookies Every Time</p>
+                  <span>
+                    <i> 10-Jan-2025 </i>
+                  </span>
+                  <p class="text-muted">
+                    Learn how to bake soft and chewy cookies with these simple
+                    tips.
+                  </p>
+                  <p class="fw-bolder">Read more</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-2">
+            <div class="row">
+              <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <img
+                  alt="The Secret to Flaky Pastry Dough"
+                  class="img-fluid"
+                  src="./IMAGES/ser2.jpg"
+                  style="max-width: 100%; height: auto"
+                />
+              </div>
+              <div class="col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="bg-white p-2">
+                  <p class="m-2 text-warning">NEWS</p>
+                  <h4>The Secret to Flaky Pastry Dough</h4>
+                  <span>
+                    <i> 08-Jan-2025 </i>
+                  </span>
+                  <p class="text-muted">
+                    Master the art of making buttery, flaky pastry dough at
+                    home.
+                  </p>
+                  <p class="fw-bolder">Read more</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container py-5">
+          <div class="row">
+            <div
+              class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center"
+            >
+              <button class="btn btn-warning text-white px-5 py-2 fw-bolder">
+                Explore More Blog Posts
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <center class="mt-5">
+            <p
+              class="text-warning"
+              style="font-size: 1.5rem; font-weight: bold"
+            >
+              OUR PARTNERS
+            </p>
+            <p class="h1 text-muted" style="color: #555; font-size: 2.5rem">
+              Trusted by Our Partners
+            </p>
+            <hr
+              style="
+                border-width: 5px;
+                width: 40px;
+                color: orange;
+                opacity: 0.7;
+              "
+            />
+          </center>
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="pLogo gap-3 px-2">
+          <div class="partner-logo text-center">
+            <img
+              src="./IMAGES/eco-food.jpg"
+              alt="Eco Food"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+          <div class="partner-logo text-center">
+            <img
+              src="./IMAGES/Health-food.jpg"
+              alt="Health Food"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+          <div class="partner-logo text-center">
+            <img
+              src="./IMAGES/fast_food_logo.jpg"
+              alt="Fast Food"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+          <div class="partner-logo text-center">
+            <img
+              src="./IMAGES/organic-food-logo-design.jpg"
+              alt="Organic Food"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+          <div class="partner-logo text-center">
+            <img
+              src="./IMAGES/healthy-eating.png"
+              alt="Healthy Eating"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+          <div class="partner-logo text-center">
+            <img
+              src="./IMAGES/energy_food_logo.jpg"
+              alt="Energy Food"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div style="background-color: orange">
+      <div class="container p-5">
+        <div class="row">
+          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+            <div>
+              <img
+                alt=""
+                class="img-fluid"
+                src="./IMAGES/chocolate-hazelnut-plate.png"
+              />
+            </div>
+          </div>
+          <div
+            class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="d-flex">
+              <img
+                alt=""
+                src="./IMAGES/call-img.png"
+                style="max-width: 80px; max-height: 80px"
+              />
+              <div>
+                <label class="text-white h3" for=""> Call Us </label>
+                <h4 class="text-white">+91 907 474 1306</h4>
+              </div>
+            </div>
+            <form class="needs-validation" novalidate>
+              <div class="d-flex flex-column">
+                <div class="d-flex">
+                  <input
+                    class="form-control rounded-0"
+                    id="emailInput"
+                    placeholder="Your Email"
+                    required
+                    type="email"
+                    aria-describedby="emailFeedback"
+                  />
+                  <button
+                    class="btn btn-light rounded-0 subscribe-btn fw-bolder border-0"
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <div id="emailFeedback" class="invalid-feedback mt-1">
+                  Please enter a valid email address.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-color: black">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 py-5"
+          >
+            <div>
+              <h2 class="text-white">Daily Bakes</h2>
+            </div>
+            <p class="text-wrap my-5 footer-font">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+              sapiente alias provident voluptatum illum odio voluptates neque
+              qui rerum laborum sit sint, a sequi dolor!
+            </p>
+            <p class="footer-font text-wrap">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos corporis non quas voluptate veniam distinctio.
+            </p>
+            <a class="text-warning text-decoration-none" href="">
+              Read More
+              <img alt="" class="ms-1" src="./IMAGES/right-arrow.png" />
+            </a>
+            <hr style="color: #ccc" />
+          </div>
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 py-5"
+          >
+            <h2 class="text-white">Recent Posts</h2>
+            <hr
+              style="
+                border-width: 5px;
+                width: 40px;
+                color: orange;
+                opacity: 0.7;
+              "
+            />
+            <div class="row">
+              <div
+                class="col-xxl-12 col-xl-12 col-lg-4 col-md-6 col-sm-6 col-12"
+              >
+                <div class="row">
+                  <div
+                    class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"
+                  >
+                    <img
+                      alt=""
+                      class="img-fluid postImg pt-1"
+                      src="./IMAGES/client1.jpg"
+                    />
+                  </div>
+                  <div
+                    class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7"
+                  >
+                    <p class="footer-font m-0">Donec id Elit Non Mi</p>
+                    <p class="footer-font">Porta Gravida</p>
+                    <p class="text-warning">22 APRIL,2025</p>
+                  </div>
+                </div>
+                <hr class="postLine" style="color: #ccc" />
+              </div>
+              <div
+                class="col-xxl-12 col-xl-12 col-lg-4 col-md-6 col-sm-6 col-12"
+              >
+                <div class="row">
+                  <div
+                    class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"
+                  >
+                    <img
+                      alt=""
+                      class="img-fluid postImg pt-1"
+                      src="./IMAGES/client2.png"
+                    />
+                  </div>
+                  <div
+                    class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7"
+                  >
+                    <p class="footer-font m-0">Donec id Elit Non Mi</p>
+                    <p class="footer-font">Porta Gravida</p>
+                    <p class="text-warning">22 APRIL,2025</p>
+                  </div>
+                </div>
+                <hr class="postLine" style="color: #ccc" />
+              </div>
+              <div
+                class="col-xxl-12 col-xl-12 col-lg-4 col-md-6 col-sm-6 col-12"
+              >
+                <div class="row">
+                  <div
+                    class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5"
+                  >
+                    <img
+                      alt=""
+                      class="img-fluid postImg pt-1"
+                      src="./IMAGES/client3.avif"
+                    />
+                  </div>
+                  <div
+                    class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7"
+                  >
+                    <p class="footer-font m-0">Donec id Elit Non Mi</p>
+                    <p class="footer-font">Porta Gravida</p>
+                    <p class="text-warning">22 APRIL,2025</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-12 col-sm-6 col-12 py-5"
+          >
+            <h2 class="text-white footer-font">Get In Touch</h2>
+            <hr
+              style="
+                border-width: 5px;
+                width: 40px;
+                color: orange;
+                opacity: 0.7;
+              "
+            />
+
+            <!-- Form with needs-validation for Bootstrap 5 validation -->
+            <form
+              id="contactForm"
+              class="Register-Form d-flex flex-column text-end custSize needs-validation"
+              novalidate
+            >
+              <input
+                id="firstName"
+                class="form-control my-2 border-0 rounded-0"
+                placeholder="First Name"
+                style="background-color: rgba(54, 53, 53, 0.5)"
+                type="text"
+                required
+              />
+              <div class="invalid-feedback text-start">
+                First name is required.
+              </div>
+
+              <input
+                id="email"
+                class="form-control my-2 border-0 rounded-0"
+                placeholder="Email Address"
+                style="background-color: rgba(54, 53, 53, 0.5)"
+                type="email"
+                required
+              />
+              <div class="invalid-feedback text-start">
+                Please provide a valid email address.
+              </div>
+
+              <textarea
+                id="message"
+                class="py-2 px-3 my-2 form-control border-0 rounded-0"
+                name="message"
+                placeholder="Your Message"
+                rows="3"
+                style="background-color: rgba(54, 53, 53, 0.5)"
+                required
+              ></textarea>
+              <div class="invalid-feedback text-start">
+                Please enter a message.
+              </div>
+
+              <button
+                type="submit"
+                class="form-control py-3 px-4 m-0 border-0 fw-bold"
+                style="background-color: rgb(194, 135, 25); color: #ffffff"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div
+            class="col-xxl-3 col-xl-3 col-lg-6 col-md-12 col-sm-12 col-12 text-start py-5"
+            id="contact-info"
+          >
+            <div class="custSize">
+              <h2 class="text-white">Contact Info</h2>
+              <hr
+                style="
+                  border-width: 5px;
+                  width: 40px;
+                  color: orange;
+                  opacity: 0.7;
+                "
+              />
+
+              <!-- Address Section -->
+              <div class="row mb-3">
+                <div class="col-5">
+                  <p class="footer-font m-0">Santa Cruz</p>
+                  <p class="footer-font m-0">Office</p>
+                </div>
+                <div class="col-7">
+                  <p class="footer-font m-0">Crorpo Technologies,</p>
+                  <p class="footer-font m-0">
+                    9860 Mill Road, Deltona, Fl32725, US
+                  </p>
+                </div>
+              </div>
+
+              <hr style="color: #ccc" />
+
+              <!-- Phone Section -->
+              <div class="row mb-3">
+                <div class="col-5">
+                  <p class="footer-font m-0">Phone:</p>
+                </div>
+                <div class="col-7">
+                  <p class="footer-font m-0">+1-202-555-0175</p>
+                  <p class="footer-font m-0">+1-202-555-0107</p>
+                </div>
+              </div>
+
+              <hr style="color: #ccc" />
+
+              <!-- Email Section -->
+              <div class="row mb-3">
+                <div class="col-5">
+                  <p class="footer-font m-0">Email:</p>
+                </div>
+                <div class="col-7">
+                  <p class="footer-font m-0">dailybakes08@example.com</p>
+                  <p class="footer-font m-0">support@example.com</p>
+                </div>
+              </div>
+
+              <hr style="color: #ccc" />
+            </div>
+          </div>
+        </div>
+        <div class="row offset_v112"></div>
+      </div>
+    </div>
+    <div class="container-fluid text-center py-3 footer">
+      <p class="m-0">
+        Copyright &#169; 2024-25 <span class="highlight">Daily Bakes</span>. All
+        Rights Reserved.
+      </p>
+    </div>
+
+    <script src="./JS/script.js"></script>
+    <script src="./JS/bootstrap.bundle.js"></script>
+  </body>
+</html>
