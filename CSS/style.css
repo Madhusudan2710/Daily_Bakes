@@ -434,6 +434,17 @@ button:focus {
     font-weight: bold;
 }
 
+#goToTop {
+    z-index: 1050;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#goToTop.show {
+    opacity: 1;
+}
+
+
 /* Media Queries */
 @media screen and (max-width: 1366px) {
     .cookie_container {

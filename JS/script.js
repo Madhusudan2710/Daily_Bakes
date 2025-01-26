@@ -297,3 +297,28 @@ document.querySelectorAll('.right-arrow').forEach(button => {
   });
 });
 
+const goToTopButton = document.getElementById("goToTop");
+let lastScrollPosition = 0;
+
+// Show or hide the button based on scroll direction
+window.addEventListener("scroll", () => {
+    const currentScrollPosition = window.pageYOffset;
+
+    if (currentScrollPosition > 100 && currentScrollPosition < lastScrollPosition) {
+        goToTopButton.classList.remove("d-none");
+        goToTopButton.classList.add("show");
+    } else {
+        goToTopButton.classList.add("d-none");
+        goToTopButton.classList.remove("show");
+    }
+
+    lastScrollPosition = currentScrollPosition;
+});
+
+// Smooth scroll to top when clicked
+goToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
